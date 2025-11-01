@@ -1,0 +1,46 @@
+/* Basic typography and spacing */
+:root {
+  --brand: #2b8a3e;
+  --muted: #6c757d;
+  --card-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+body {
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #f8f9fa;
+  color: #212529;
+}
+
+/* Carousel image height */
+.carousel-img {
+  height: 50vh;
+  object-fit: cover;
+}
+
+/* Cards */
+.insect-card {
+  transition: transform .18s ease, box-shadow .18s ease;
+  box-shadow: var(--card-shadow);
+}
+.insect-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* Fact cards */
+.fact-card {
+  background: #fff;
+}
+
+/* Navbar brand text smaller on mobile */
+.navbar-brand span {
+  font-size: 1rem;
+}
+
+/* Footer small tweaks */
+footer p, footer a { font-size: .9rem; }
+
+/* Responsive tweak: reduce carousel height on small phones */
+@media (max-width: 480px) {
+  .carousel-img { height: 34vh; }
+}
