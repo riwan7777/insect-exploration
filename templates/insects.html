@@ -11,91 +11,85 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="index.html">InsectWorld</a>
+    <a class="navbar-brand" href="{{ url_for('home') }}">InsectWorld</a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link active" href="insects.html">Insects</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="{{ url_for('insects') }}">Insects</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- All Insects Section -->
 <div class="container my-5 text-center">
   <h2 class="mb-4">Explore All Insects 🐞</h2>
   <p class="lead mb-5">Click on each insect to learn more about their habitat, diet, lifecycle, and fun facts!</p>
 
   <div class="row g-4">
-    <!-- Butterfly Card -->
     <div class="col-sm-6 col-md-4 col-lg-3">
       <div class="card h-100 shadow-sm">
-        <img src="static/images/butterfly.jpg" class="card-img-top" alt="Butterfly">
+        <img src="{{ url_for('static', filename='images/butterfly.jpg') }}" class="card-img-top" alt="Butterfly">
         <div class="card-body">
           <h5 class="card-title">Butterfly</h5>
           <p class="card-text small text-muted">Colorful pollinators with four wings.</p>
-          <a href="butterfly-detail.html" class="btn btn-sm btn-outline-success">Read</a>
+          <a href="{{ url_for('butterfly_detail') }}" class="btn btn-sm btn-outline-success">Read</a>
         </div>
       </div>
     </div>
 
-    <!-- Ant Card -->
     <div class="col-sm-6 col-md-4 col-lg-3">
       <div class="card h-100 shadow-sm">
-        <img src="static/images/ant.jpg" class="card-img-top" alt="Ant">
+        <img src="{{ url_for('static', filename='images/ant.jpg') }}" class="card-img-top" alt="Ant">
         <div class="card-body">
           <h5 class="card-title">Ant</h5>
           <p class="card-text small text-muted">Social insects living in colonies.</p>
-          <a href="ant-detail.html" class="btn btn-sm btn-outline-success">Read</a>
+          <a href="{{ url_for('ant_detail') }}" class="btn btn-sm btn-outline-success">Read</a>
         </div>
       </div>
     </div>
 
-    <!-- Honey Bee Card -->
     <div class="col-sm-6 col-md-4 col-lg-3">
       <div class="card h-100 shadow-sm">
-        <img src="static/images/bee.jpg" class="card-img-top" alt="Honey Bee">
+        <img src="{{ url_for('static', filename='images/bee.jpg') }}" class="card-img-top" alt="Honey Bee">
         <div class="card-body">
           <h5 class="card-title">Honey Bee</h5>
           <p class="card-text small text-muted">Key pollinators for many crops.</p>
-          <a href="bee-detail.html" class="btn btn-sm btn-outline-success">Read</a>
+          <a href="{{ url_for('bee_detail') }}" class="btn btn-sm btn-outline-success">Read</a>
         </div>
       </div>
     </div>
 
-    <!-- Beetle Card -->
     <div class="col-sm-6 col-md-4 col-lg-3">
       <div class="card h-100 shadow-sm">
-        <img src="static/images/beetle.jpg" class="card-img-top" alt="Beetle">
+        <img src="{{ url_for('static', filename='images/beetle.jpg') }}" class="card-img-top" alt="Beetle">
         <div class="card-body">
           <h5 class="card-title">Beetle</h5>
           <p class="card-text small text-muted">Diverse group with hard wing cases.</p>
-          <a href="beetle-detail.html" class="btn btn-sm btn-outline-success">Read</a>
+          <a href="{{ url_for('beetle_detail') }}" class="btn btn-sm btn-outline-success">Read</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Return Home Button -->
-  <a href="index.html" class="btn btn-success btn-lg rounded-pill fw-bold mt-5">🏠 Return Home</a>
-
+  <a href="{{ url_for('home') }}" class="btn btn-success btn-lg rounded-pill fw-bold mt-5">🏠 Return Home</a>
 </div>
 
-<!-- Footer -->
 <footer class="bg-dark text-light py-4 mt-5">
   <div class="container text-center">
     <p class="mb-1 fw-bold">Insect Kingdom</p>
     <p class="small mb-2">Explore the diversity of insects — for learning and awareness.</p>
     <div class="small">
-      <a href="index.html" class="text-light text-decoration-none me-2">Home</a> |
-      <a href="about.html" class="text-light text-decoration-none mx-2">About</a> |
-      <a href="insects.html" class="text-light text-decoration-none mx-2">Insects</a> |
-      <a href="contact.html" class="text-light text-decoration-none ms-2">Contact</a>
+      <a href="{{ url_for('home') }}" class="text-light text-decoration-none me-2">Home</a> |
+      <a href="{{ url_for('about') }}" class="text-light text-decoration-none mx-2">About</a> |
+      <a href="{{ url_for('insects') }}" class="text-light text-decoration-none mx-2">Insects</a> |
+      <a href="{{ url_for('contact') }}" class="text-light text-decoration-none ms-2">Contact</a>
     </div>
     <p class="small mt-3 mb-0">© 2025 Insect Kingdom. All Rights Reserved.</p>
   </div>

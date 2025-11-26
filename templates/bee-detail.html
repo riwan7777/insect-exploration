@@ -8,34 +8,33 @@
 </head>
 <body>
 
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="index.html">InsectWorld</a>
+    <a class="navbar-brand" href="{{ url_for('home') }}">InsectWorld</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="insects.html">Insects</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('insects') }}">Insects</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Detail Content -->
 <div class="container my-5">
   <h2 class="text-center mb-4">Honey Bee 🍯🐝</h2>
   <div class="row">
     <div class="col-md-6 text-center">
-      <img src="static/images/bee.jpg" class="img-fluid rounded shadow" alt="Honey Bee">
+      <img src="{{ url_for('static', filename='images/bee.jpg') }}" class="img-fluid rounded shadow" alt="Honey Bee">
     </div>
     <div class="col-md-6">
       <h5>About Honey Bee</h5>
       <p>Honey bees are crucial pollinators for crops and flowers. They produce honey and live in hives.</p>
+
       <h6>Fun Facts:</h6>
       <ul>
         <li>Honey bees communicate via dances.</li>
@@ -43,26 +42,24 @@
         <li>They play a key role in food production.</li>
       </ul>
 
-      <!-- Navigation Buttons -->
       <div class="mt-4">
-        <a href="insects.html" class="btn btn-primary">⬅ Back to Insects</a>
-        <a href="index.html" class="btn btn-secondary">🏠 Home</a>
-        <a href="about.html" class="btn btn-success">ℹ About</a>
+        <a href="{{ url_for('insects') }}" class="btn btn-primary">⬅ Back to Insects</a>
+        <a href="{{ url_for('home') }}" class="btn btn-secondary">🏠 Home</a>
+        <a href="{{ url_for('about') }}" class="btn btn-success">ℹ About</a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Footer -->
 <footer class="bg-dark text-light py-4">
   <div class="container text-center">
     <p class="mb-1 fw-bold">Insect Kingdom</p>
     <p class="small mb-2">Explore the diversity of insects — for learning and awareness.</p>
     <div class="small">
-      <a href="index.html" class="text-light text-decoration-none me-2">Home</a> |
-      <a href="about.html" class="text-light text-decoration-none mx-2">About</a> |
-      <a href="insects.html" class="text-light text-decoration-none mx-2">Insects</a> |
-      <a href="contact.html" class="text-light text-decoration-none ms-2">Contact</a>
+      <a href="{{ url_for('home') }}" class="text-light text-decoration-none me-2">Home</a> |
+      <a href="{{ url_for('about') }}" class="text-light text-decoration-none mx-2">About</a> |
+      <a href="{{ url_for('insects') }}" class="text-light text-decoration-none mx-2">Insects</a> |
+      <a href="{{ url_for('contact') }}" class="text-light text-decoration-none ms-2">Contact</a>
     </div>
     <p class="small mt-3 mb-0">© 2025 Insect Kingdom. All Rights Reserved.</p>
   </div>
